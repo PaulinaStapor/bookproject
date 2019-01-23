@@ -24,7 +24,7 @@ public class Author {
     private String firstName;
     @DatabaseField(columnName = "author_surname", canBeNull = false)
     private String lastName;
-    @DatabaseField(columnName = "author_virth_date")
+    @DatabaseField(columnName = "author_birth_date")
     private Date dateOfBirth;
 
 }
