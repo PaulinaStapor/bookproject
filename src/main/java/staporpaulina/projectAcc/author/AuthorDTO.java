@@ -13,5 +13,5 @@ public class AuthorDTO {
     private String firstName;
     private String lastName;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dateOfBirth;
+    private String dateOfBirth;
 }

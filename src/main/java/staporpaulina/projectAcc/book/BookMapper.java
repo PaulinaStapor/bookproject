@@ -2,16 +2,20 @@ package staporpaulina.projectAcc.book;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface BookMapper {
-BookMapper INSTANCE= Mappers.getMapper(BookMapper.class);
-@Mapping(source = "title", target = "title")
-@Mapping(source = "pages", target = "pages")
-@Mapping(source = "description", target = "description")
-@Mapping(source = "dateOfPublication", target = "dateOfPublication")
-@Mapping(source = "author", target = "author")
-Book bookDTOToBook (BookDTO bookDTO);
+    BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
+
+    @Mappings({
+            @Mapping(target = "title", source = "bookDTO.title"),
+            @Mapping(target = "pages", source = "bookDTO.pages"),
+            @Mapping(target = "description", source = "bookDTO.description"),
+            @Mapping(target = "dateOfPublication", source = "bookDTO.dateOfPublication"),
+            @Mapping(target = "author", source = "bookDTO.author")
+    })
+    Book bookDTOToBook(BookDTO bookDTO);
 
 }
