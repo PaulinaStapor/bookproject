@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//localhost:8080/swagger-ui
+//localhost:9090/swagger-ui.html
 @RestController
 public class AuthorController {
 
