@@ -10,6 +10,6 @@ public class BookDTO {
     private Long pages;
     private String description;
     private Date dateOfPublication;
-
+    private String isbn;
     private Author author;
 }
