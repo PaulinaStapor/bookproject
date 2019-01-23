@@ -12,6 +12,6 @@ BookMapper INSTANCE= Mappers.getMapper(BookMapper.class);
 @Mapping(source = "description", target = "description")
 @Mapping(source = "dateOfPublication", target = "dateOfPublication")
 @Mapping(source = "author", target = "author")
-BookDTO bookToBookDTO (Book book);
+Book bookDTOToBook (BookDTO bookDTO);
 
 }

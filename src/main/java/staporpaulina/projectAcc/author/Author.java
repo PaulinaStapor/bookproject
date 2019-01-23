@@ -20,7 +20,7 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @DatabaseField(generatedId = true, columnName = "author_id", canBeNull = false, foreignAutoRefresh = true, foreignAutoCreate = true)
     private Long id;
-    @DatabaseField(columnName = "author_name", canBeNull = false)
+    @DatabaseField(columnName = "author_name")
     private String firstName;
     @DatabaseField(columnName = "author_surname", canBeNull = false)
     private String lastName;

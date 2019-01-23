@@ -10,7 +10,7 @@ AuthorMapper INSTANCE= Mappers.getMapper(AuthorMapper.class);
 @Mapping(source = "firstName", target = "firstName")
 @Mapping(source = "lastName", target = "lastName")
 @Mapping(source = "dateOfBirth", target = "dateOfBirth")
-AuthorDTO authorToAuthorDTO(Author author);
+Author authorDTOToAuthor(AuthorDTO authorDTO);
 
 
 }
