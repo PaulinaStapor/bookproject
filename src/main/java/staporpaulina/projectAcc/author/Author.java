@@ -1,30 +1,27 @@
 package staporpaulina.projectAcc.author;
 
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import staporpaulina.projectAcc.book.Book;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Getter
 @Setter
+@EqualsAndHashCode
 @Entity
-@DatabaseTable(tableName = "AUTHOR")
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @DatabaseField(generatedId = true, columnName = "author_id", canBeNull = false, foreignAutoRefresh = true, foreignAutoCreate = true)
     private Long id;
-    @DatabaseField(columnName = "author_name")
     private String firstName;
-    @DatabaseField(columnName = "author_surname", canBeNull = false)
     private String lastName;
-    @DatabaseField(columnName = "author_birth_date")
-    private String dateOfBirth;
+    private Date dateOfBirth;
+    @ManyToMany
+    @JoinTable(name = "author_books")
+    private Set<Book> books;
 
 }
