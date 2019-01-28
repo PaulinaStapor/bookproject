@@ -9,13 +9,13 @@ import org.mapstruct.factory.Mappers;
 public interface BookMapper {
     BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
 
-    @Mappings({
-            @Mapping(target = "title", source = "bookDTO.title"),
-            @Mapping(target = "pages", source = "bookDTO.pages"),
-            @Mapping(target = "description", source = "bookDTO.description"),
-            @Mapping(target = "dateOfPublication", source = "bookDTO.dateOfPublication"),
-            @Mapping(target = "author", source = "bookDTO.author")
-    })
+//    @Mappings({
+//            @Mapping(target = "title", source = "bookDTO.title"),
+//            @Mapping(target = "pages", source = "bookDTO.pages"),
+//            @Mapping(target = "description", source = "bookDTO.description"),
+//            @Mapping(target = "dateOfPublication", source = "bookDTO.dateOfPublication"),
+//            @Mapping(target = "author", source = "bookDTO.author")
+//    })
     Book bookDTOToBook(BookDTO bookDTO);
 
 }

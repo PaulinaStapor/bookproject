@@ -44,31 +44,5 @@ public class SwaggerConfig {
                 .directModelSubstitute(LocalDate.class, String.class);
 
     }
-//    @Bean
-//    public Docket SwaggerApi() {
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .groupName("projectAcc")
-//                .apiInfo(apiInfo())
-//                .select()
-//                .apis(RequestHandlerSelectors.any())
-//                .paths(getSwaggerPaths())
-//                .build()
-//                .globalResponseMessage(RequestMethod.GET, newArrayList(new ResponseMessageBuilder()
-//                        .code(500)
-//                        .message("500 message")
-//                        .responseModel(new ModelRef("Error"))
-//                        .build()));
-//    }
-//
-//    private Predicate<String> getSwaggerPaths() {
-//        return or(regex("/api.*"), regex("/test.*"));
-//    }
-//
-//    private ApiInfo apiInfo() {
-//        return new ApiInfoBuilder()
-//                .title("procject acc")
-//                .description("project with mapper, swagger and postgres")
-//                .contact(new Contact("Paulina Stapor", "http://accenure.com", "paulina.stapor@accenture.com"))
-//                .build();
-//    }
+
 }

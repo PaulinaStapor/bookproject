@@ -17,7 +17,7 @@ import java.util.Date;
 @DatabaseTable(tableName = "AUTHOR")
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @DatabaseField(generatedId = true, columnName = "author_id", canBeNull = false, foreignAutoRefresh = true, foreignAutoCreate = true)
     private Long id;
     @DatabaseField(columnName = "author_name")

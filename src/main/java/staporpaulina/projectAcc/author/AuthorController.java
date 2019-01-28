@@ -18,6 +18,8 @@ public class AuthorController {
 
     @Autowired
     public AuthorController(AuthorService authorService) {
+
+
         this.authorService = authorService;
     }
 
@@ -43,6 +45,7 @@ public class AuthorController {
 
     @RequestMapping(value = "/authors/{id}", method = RequestMethod.DELETE)
     public void byeAuthor(@PathVariable Long id) {
+
         authorService.deleteAuthor(id);
     }
 

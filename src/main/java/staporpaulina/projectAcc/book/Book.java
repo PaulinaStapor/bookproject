@@ -9,7 +9,6 @@ import lombok.Setter;
 import staporpaulina.projectAcc.author.Author;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -17,7 +16,7 @@ import java.util.Date;
 @DatabaseTable(tableName = "BOOKS")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @DatabaseField(generatedId = true, columnName = "book_id", canBeNull = false, foreignAutoRefresh = true, foreignAutoCreate = true)
     private Long id;
     @DatabaseField(columnName = "book_title", canBeNull = false)
@@ -28,7 +27,7 @@ public class Book {
     @DatabaseField(columnName = "description")
     private String description;
     @DatabaseField(columnName = "date_of_publication", canBeNull = false, dataType = DataType.STRING)
-    private Date dateOfPublication;
+    private String dateOfPublication;
     @DatabaseField(columnName = "ISBN_number", canBeNull = false, unique = true)
     private String isbn;
     @ManyToOne

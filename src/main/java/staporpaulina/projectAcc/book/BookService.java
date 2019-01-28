@@ -1,6 +1,7 @@
 package staporpaulina.projectAcc.book;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import staporpaulina.projectAcc.author.Author;
 import staporpaulina.projectAcc.author.AuthorRepository;
@@ -23,14 +24,13 @@ public class BookService {
 
     public void addNewBook(BookDTO bookDTO, String query) {
         Book book = bookMapper.bookDTOToBook(bookDTO);
-//        Author author = authorRepository.findAuthorByLastName(query).get();
-//        book.setAuthor(author);
-
+        Author author = authorRepository.findAuthorByLastName(query).get();
+        book.setAuthor(author);
         bookRepository.save(book);
     }
 
-    public void removeBook(BookDTO bookDTO) {
-        Book book = bookMapper.bookDTOToBook(bookDTO);
+    public void removeBook(Long id) {
+        Book book=bookRepository.findById(id).get();
         bookRepository.delete(book);
     }
 
